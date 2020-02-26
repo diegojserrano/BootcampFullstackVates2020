@@ -1,0 +1,15 @@
+{
+  "name": "sitio2",
+  "version": "1.0.0",
+  "description": "Prueba de un sitio minimo con node y express",
+  "main": "iniciar.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ejecutar": "node iniciar.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
