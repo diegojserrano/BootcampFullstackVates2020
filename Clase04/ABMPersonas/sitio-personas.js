@@ -1,7 +1,7 @@
 
 let http = require('http')
 let express = require('express')
-let personas = require('../Pruebas/personas')
+let personas = require('./personas')
 
 let visitas = 0
 let app = express()
