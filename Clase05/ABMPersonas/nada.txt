@@ -1,0 +1,38 @@
+Que es una API
+Application programming interface
+
+Que pasa con aplicaciones con multiples
+interfaces de usuario
+
+El servidor va a exponer funciones
+mediante una API.
+
+API con protocolos de texto.
+Por otro lado, mejor si es por internet
+
+Web services. SOAP.
+
+El protocolo de aplicacion 
+mas popular es http
+
+API RESTful
+
+Representational State Transfer
+
+Cada función va a tener una url
+
+/vendedor/5
+/vendedor/borrar/5
+/ventas/12345/detalle
+/ventas/nueva
+
+Comandos HTTP
+
+GET seguro
+POST inseguro
+DELETE idempotente
+PUT idempotente
+PATCH idempotente
+
+
+
