@@ -3,50 +3,89 @@ let db = require('../config/db')
 
 personas = []
 
-function agregar(nueva) {
-    personas.push(nueva)
+async function agregar(nueva) {
+    let nuevoId = 0;
+    try{
+        await sql.connect(db.config)
+        const result = await sql.query`insert into personas values(${nueva.nombre})`
+
+        if (result.rowsAffected[0] > 0) {
+            const result2 = await sql.query('select @@identity as nuevoId')
+            nuevoId = result2.recordset[0].nuevoId
+        }
+    }
+    catch (err) {
+        console.log(err)
+    }
+    return nuevoId
 }
 
-function buscar(id) {
-    return personas.find(x => x.id == id)
+
+async function buscar(id) {
+    let persona = undefined;
+    try{
+        await sql.connect(db.config)
+        const result = await sql.query`select id, nombre from personas where id = ${id}`
+
+        if (result.rowsAffected[0] > 0)
+            persona = result.recordset[0]
+    }
+    catch (err) {
+        console.log(err)
+    }
+    return persona
 }
 
 async function listar() {
     let personas = []
     try {
-        // make sure that any items are correctly URL encoded in the connection string
-        console.dir(db.config)
         await sql.connect(db.config)
 
-        //await sql.query`insert into personas values ('Otro')`
         const result = await sql.query('select id, nombre from personas')
 
         personas = result.recordset       
-        //console.dir(personas)        
-        
     } catch (err) {
         console.log(err)
-        // ... error checks
     }
-    //console.dir(personas)
     return personas
 }
 
-function reemplazar(persona) {
-    let pos = personas.indexOf(x => x.id == id)
-    if (pos != -1)
-        personas[pos] = persona
+async function modificar(persona) {
+    let modificado = false;
+    try
+    {
+        await sql.connect(db.config)
+        const result = await sql.query`update personas set nombre = ${persona.nombre} where id = ${persona.id}`
+
+        if (result.rowsAffected[0] > 0) {
+            modificado = true
+        }
+    }
+    catch (err) {
+        console.log(err)
+    }
+    return modificado
 }
 
-function borrar (id) {
-    let pos = personas.indexOf(x => x.id == id)
-    if (pos != -1)
-        personas.splice(pos,1)
-}
+async function borrar (id) {
+    let borrado = false;
 
+    try{
+        await sql.connect(db.config)
+        const result = await sql.query`delete personas where id =(${id})`
+
+        if (result.rowsAffected[0] > 0) {
+            borrado = true
+        }
+    }
+    catch (err) {
+        console.log(err)
+    }
+    return borrado
+}
 
 exports.agregar = agregar
 exports.buscar = buscar
 exports.listar = listar
 exports.borrar = borrar
-exports.reemplazar = reemplazar
+exports.modificar = modificar
