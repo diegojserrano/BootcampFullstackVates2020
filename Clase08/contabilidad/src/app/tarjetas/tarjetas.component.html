@@ -1,0 +1,13 @@
+<table>
+    <tr><th colspan="2"><h2>Listado de tarjetas</h2></th></tr>
+    <tr *ngFor="let t of tarjetas; index as i" (click)="click(t)" >
+        <td>{{t.id}}</td><td>{{t.nombre}}</td><td><a (click)="eliminar(i)" href="javascript:void(0)">Eliminar</a></td>
+    </tr>
+    <tr><td><button (click)="nueva()">Nueva</button></td></tr>
+</table>
+
+
+<app-tarjeta-detalle *ngIf="seleccionada" [tarjeta]="seleccionada"></app-tarjeta-detalle>
+<br>
+<button (click)="agregar()" *ngIf="creando">Aceptar</button>
+<button (click)="cancelar()" *ngIf="creando">Cancelar</button>
