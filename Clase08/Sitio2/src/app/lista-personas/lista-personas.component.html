@@ -1,0 +1,17 @@
+
+  <table>
+    <tr><th>Número</th><th>Nombre</th><th><button (click)="crear_nueva()">Nueva</button></th></tr>
+    <tr *ngFor="let p of plantel"><td>{{p.id}}</td><td>{{p.nombre}}</td>
+    <td><button (click)="editar(p)" >Editar</button> 
+        <button (click)="borrar(p)" >Borrar</button>
+    </td> </tr>
+  </table>
+
+<div *ngIf="seleccionada">
+  Numero: <input type="number" [(ngModel)]="seleccionada.id" /><br/>
+  Nombre: <input type="text" [(ngModel)]="seleccionada.nombre" /><br/>
+  <span *ngIf="creando">
+  <button (click)="agregar()">Agregar</button>
+  <button (click)="cancelar()">Cancelar</button>
+  </span>
+</div>
