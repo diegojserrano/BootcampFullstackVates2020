@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>Número</th><th>Nombre</th>
+    </tr>
+    <tr><td>{{ id }} </td><td>{{ nombre }}</td></tr>
+    <tr><td><input type="number" [(ngModel)] = "this.id"/></td>
+        <td><input type="text" [(ngModel)] = "this.nombre"></td>
+    </tr>
+    <tr><td>
+        <button (click)="limpiar()">Limpiar</button>
+    </td></tr>
+</table>
