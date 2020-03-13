@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "73fdd458-2222-4e1d-b4c7-1b118c0741af",
+		"name": "ABM Personas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get de la persona 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get de una persona inexistente",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/6",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar una persona",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "7",
+							"type": "text"
+						},
+						{
+							"key": "nombre",
+							"value": "Arturo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/personas",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listado de todas las personas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/personas",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una persona",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/personas/1012",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"personas",
+						"1012"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar el nombre de una persona",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "1011",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "nombre",
+							"value": "modificado otra vez",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/personas",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"personas"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
