@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let linea of todo" 
+    [class.grande]="linea.includes('Borra')" >
+    {{linea}}</li>
+</ul>
