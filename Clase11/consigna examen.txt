@@ -1,0 +1,32 @@
+Para el viernes 27:
+
+* Backend con node con una API REST con los endpoints que quieran.
+* Frontend con angular:
+     - Listado de compras que muestre:
+        - Id de la compra
+        - Nombre del articulo
+        - Cantidad
+        - Precio
+        - Total
+        
+    - Registración de nueva compra, con input para:
+        - Id articulo
+        - Cantidad
+        
+        <select [(ngModel)] = "nuevo.idArticulo">
+            <option *ngFor="let a of articulos" [id]="a.idArticulo][>{{a.nombre}}</option>
+        </select>
+        
+        
+* Tienen toda la libertad para programarlo. Pueden aplicar todo lo que sepan, consultar a otros programadores, consultar por internet.
+
+* Consultas a diegojserrano@gmail.com
+
+* No modifiquen para nada la base de datos.
+
+* El viernes a las 18:00 publico por chat y git una consigna nueva para agregar.
+    
+* El viernes a las 21:00 suben lo que tengan por google drive.
+
+
+
