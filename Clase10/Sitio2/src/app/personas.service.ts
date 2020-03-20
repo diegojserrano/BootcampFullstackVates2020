@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http'
 })
 export class PersonasService {
 
-  private url: string = 'http://10.0.0.215:8000/personas';
+  private url: string = 'http://localhost:8000/personas';
 
   constructor(private historial: HistorialService, 
     private http: HttpClient) { }
@@ -16,7 +16,13 @@ export class PersonasService {
   plantel: Persona[] = []
 
   async consultar() {
+      try {
       this.plantel = await this.http.get<Persona[]>(this.url).toPromise()
+      }
+      catch (err) {
+
+        console.log(err)
+      }
   }
   
 async agregar(nueva: Persona) {
