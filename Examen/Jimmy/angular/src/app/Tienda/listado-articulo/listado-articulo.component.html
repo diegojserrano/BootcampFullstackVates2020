@@ -1,0 +1,16 @@
+<div class="container">
+    <table class="table table-bordered table-hover table-borderless">
+        <tr class="text-center">
+
+            <th>NOMBRE ARTICULO</th>
+            <th>CANTIDAD VENTA</th>
+
+
+        </tr>
+        <tr *ngFor="let c of articulo" class="text-center">
+
+            <td>{{c.nombre}}</td>
+            <td>{{c.cantidadVenta}}</td>
+
+    </table>
+</div>

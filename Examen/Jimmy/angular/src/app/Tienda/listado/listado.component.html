@@ -1,0 +1,20 @@
+<div class="container">
+    <table class="table table-bordered table-hover table-borderless">
+        <tr class="text-center">
+            <th>ID</th>
+            <th>ARTICULO</th>
+            <th>CANTIDAD</th>
+            <th>PRECIO</th>
+            <th>TOTAL</th>
+
+        </tr>
+        <tr *ngFor="let c of compra" class="text-center">
+
+            <td>{{c.id}}</td>
+            <td>{{c.nombre}}</td>
+            <td>{{c.cantidad}}</td>
+            <td>{{c.precio}}</td>
+            <td>{{c.total}}</td>
+
+    </table>
+</div>

@@ -1,0 +1,9 @@
+ul {
+
+    max-height: 100px;
+    overflow: scroll;
+}
+
+.grande {
+    font-size: 1.7em;
+}

@@ -1,0 +1,28 @@
+<div class="col-md-4"*ngFor="let compra of Compras">
+    <div class="card text-center">
+    <div class="card-header bg-dark  text-white d-flex justify-content-between align-items-center">
+        {{compra.Nombre}}
+        <button class="btn btn-danger" (click)="BorrarCompra(compra.IdCompra)">
+             <i class="far fa-trash-alt"> </i>
+        </button>
+    
+    </div>
+    
+    <div class="card-body"> 
+       <h5>Precio Unitario: ${{compra.Precio}}</h5>
+        <h6>Cantidad Comprada: {{compra.Cantidad}}</h6>
+        <h3>TOTAL: ${{compra.Total}}</h3>
+ 
+      
+    
+      
+    <a   [routerLink]="['/Compras/Editar',compra.IdCompra]" class="btn btn-info btn-block" >
+        Editar Cantidad</a>
+        
+    </div>
+    
+    
+    </div>
+    </div>
+
+        

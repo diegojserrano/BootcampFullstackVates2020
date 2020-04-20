@@ -1,0 +1,21 @@
+<div class="col-md-4"*ngFor="let art of Articulos">
+<div class="card text-center">
+<div class="card-header bg-dark  text-white d-flex justify-content-between align-items-center">
+    {{art.Nombre }}
+    <button class="btn btn-danger" (click)="BorrarArticulo(art.Nombre)">
+         <i class="far fa-trash-alt"> </i>
+    </button>
+
+</div>
+
+<div class="card-body"> 
+<p >Precio : {{art.Precio}}</p>    
+<a  [routerLink]="['/Articulos/Editar',art.IdArticulo]"  class="btn btn-info btn-block">
+    Editar Articulo</a>
+    
+<a   [routerLink]="['/Compras/Agregar',art.IdArticulo]" class="btn btn-info btn-block">Agregar al carro</a>
+</div>
+
+
+</div>
+</div>

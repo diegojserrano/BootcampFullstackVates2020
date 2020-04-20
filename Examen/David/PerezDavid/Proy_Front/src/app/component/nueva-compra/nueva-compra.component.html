@@ -1,0 +1,30 @@
+<div class="container">
+  <table>
+    <tr><td><h3>Nueva Compra</h3></td><th><button (click)="crear_nueva()">Nueva</button></th>
+  </table>
+  <div *ngIf="lista">
+    <td>Codigo Articulo:</td> <input type="number" [(ngModel)]="lista.idArticulo"/><br>
+    <td>Cantidad:</td> <input type="number" [(ngModel)]="lista.cantidad"/><br>
+    <span *ngIf="creando">
+      <button (click)="agregar()">Agregar</button>
+      <button (click)="cancelar()">Cancelar</button>
+    </span>
+    </div>
+    <div>
+      <form>
+        <tr>
+          <th>Codigo Articulo</th>
+          <th>Cantidad</th>
+        </tr>
+        <tr *ngFor="let p of compras.lista">
+          <td>{{p.idArticulo}}</td>
+          <td>{{p.cantidad}}</td>
+          <td>
+            <button (click)="editar(p)">Editar</button> 
+            <button (click)="borrar(p)">Borrar</button>
+          </td>
+        </tr>
+      </form>
+    </div>
+</div>
+  

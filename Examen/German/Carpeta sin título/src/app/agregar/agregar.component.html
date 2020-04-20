@@ -1,0 +1,21 @@
+ 
+<form (*ngSubmit)="seleccionada">
+  
+   <label>Nombre Articulo</label>
+
+   <input [(ngModel)]="seleccionada.Nombre" type="text"><br/>
+
+  
+   <label>Precio</label>
+  
+   <input [(ngModel)]="seleccionada.Precio" type="number"><br/>
+ 
+   <span *ngIf ="crear()"></span>
+
+   <button class="btn btn-warning mt-3" (click)="agregar()">Agregar</button>
+  
+</form>
+
+
+
+

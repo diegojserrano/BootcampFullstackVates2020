@@ -1,0 +1,24 @@
+<div class="container">
+
+    <br>
+
+    <label for="idArticulo"><b>ARTICULO:</b></label>
+    <select id="idArticulo" [(ngModel)]="seleccionado.idArticulo">
+        <option *ngfor="let ar of articulos" [value]="ar.idArticulo">
+            {{ar.nombre}}</option>
+    </select>
+
+    <button (click)="Guardar()" style="margin-left: 150px;"><img src="https://icon-icons.com/icons2/403/PNG/32/shopping-basket-add_40507.png"/></button>
+
+
+    <br><br>
+
+    <label for="idCantidad"><b>CANTIDAD:</b></label>
+    <input type="number" id="idCantidad" min="1" [(ngModel)]="seleccionado.cantidad" />
+
+    <br/> <br/>
+
+
+
+</div>
+<br><br>

@@ -1,0 +1,205 @@
+{
+	"info": {
+		"_postman_id": "69ae87c9-87c7-4425-b25e-ab2f819f4f02",
+		"name": "Bootcamp Vates",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Examen: Get listado de articulos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:2424/api",
+					"host": [
+						"localhost"
+					],
+					"port": "2424",
+					"path": [
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Examen: Agregar Articulos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "cafe",
+							"type": "text"
+						},
+						{
+							"key": "precio",
+							"value": "150",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2424/api/agregarArticulo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2424",
+					"path": [
+						"api",
+						"agregarArticulo"
+					]
+				},
+				"description": "Examen: Agregar Articulos"
+			},
+			"response": []
+		},
+		{
+			"name": "Examen: Modificar Articulos",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "nombre",
+							"value": "Facturas",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:2424/api/ModificarArticulo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2424",
+					"path": [
+						"api",
+						"ModificarArticulo"
+					]
+				},
+				"description": "Examen: Modificar Articulos"
+			},
+			"response": []
+		},
+		{
+			"name": "Examen: Borrar Articulos",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:2424/api//borrar/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2424",
+					"path": [
+						"api",
+						"",
+						"borrar",
+						"9"
+					]
+				},
+				"description": "Examen: Borrar Articulos"
+			},
+			"response": []
+		},
+		{
+			"name": "Examen Listado Total",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2424/api/listadoTotal",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2424",
+					"path": [
+						"api",
+						"listadoTotal"
+					]
+				},
+				"description": "http://localhost:2424/api/listadoTotal"
+			},
+			"response": []
+		},
+		{
+			"name": "Examen: Agregar Compra",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "IdArticulo",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "Cantidad",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/nuevaCompra/",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"nuevaCompra",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Examen: Reporte",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/reporte",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"reporte"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

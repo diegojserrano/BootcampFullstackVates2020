@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Agregar Nuevo Articulo</h4>
+
+
+                <form class="floating-labels m-t-40" *ngIf="campo">
+
+                    <div class="form-group m-b-40">
+                        <input type="text" class="form-control" name="nombre" [(ngModel)]="campo.nombre">
+                        <span class="bar"></span>
+                        <label for="input1">Nombre Articulo</label>
+                    </div>
+
+                    <div class="form-group m-b-40">
+                        <input type="text" class="form-control" id="input2" name="precio" [(ngModel)]="campo.precio">
+                        <span class="bar"></span>
+                        <label for="input2">Precio</label>
+                    </div>
+
+                    <div class="button-group">
+                        <button class="btn waves-effect waves-light btn-primary" (click)="agregar()">Cargar</button>
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>

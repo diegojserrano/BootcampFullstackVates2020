@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Agregar Nueva Compra</h4>
+
+
+                <form class="floating-labels m-t-40" *ngIf="campo">
+
+                    <div class="form-group m-b-40">
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h5 class="m-t-30 m-b-10">Articulos</h5>
+                                <select [(ngModel)]="articulo.IdArticulo" name="a.IdArticulo" class="selectpicker" data-style="form-control btn-secondary">
+                                    <option >---Articulos---</option>
+                                    <option *ngFor="let a of arti.plantel" [value]="a.IdArticulo">{{a.Nombre}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="form-group m-b-40">
+                            <input type="text" class="form-control" id="input2" name="cantidad" [(ngModel)]="campo.cantidad">
+                            <span class="bar"></span>
+                            <label for="input2">Cantidad</label>
+                        </div>
+
+                        <div class="button-group">
+                            <button class="btn waves-effect waves-light btn-primary" (click)="agregar()">Cargar</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
