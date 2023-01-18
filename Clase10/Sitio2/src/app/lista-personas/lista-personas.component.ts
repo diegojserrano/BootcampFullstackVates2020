@@ -46,6 +46,10 @@ export class ListaPersonasComponent implements OnInit {
     this.seleccionada = new Persona() 
   }
 
+  modificar() {
+    this.personas.modificar(this.seleccionada)
+  } 
+  
   cancelar() {
     this.seleccionada = null
     this.creando = false

@@ -1,19 +1,21 @@
 
   <h2> Cantidad de clicks: {{cantidadClicks}}</h2>
 
-  <table>
-    <tr><th>Número</th><th>Nombre</th><th><button (click)="crear_nueva()">Nueva</button></th></tr>
+  <table style="min-width: 600px;">
+    <tr><th>Número</th><th class="cabecera-nombre">Nombre</th><th><button (click)="crear_nueva()">Nueva</button></th></tr>
     <tr *ngFor="let p of personas.plantel"><td>{{p.id}}</td><td [class.rojo]="p.nombre.length < 5">{{p.nombre}}</td>
-    <td><button (click)="editar(p)" >Editar</button> 
+    <td style="text-align: center;"><button (click)="editar(p)" >Editar</button> 
         <button (click)="borrar(p)" >Borrar</button>
     </td> </tr>
   </table>
 
-<div *ngIf="seleccionada">
+<div *ngIf="seleccionada" style="margin: auto;width: 400px;margin-top: 40px;margin-bottom: 40px;">
   Numero: <input type="number" [(ngModel)]="seleccionada.id" /><br/>
-  Nombre: <input type="text" [(ngModel)]="seleccionada.nombre" /><br/>
+  Nombre: <input type="text" [(ngModel)]="seleccionada.nombre" /><br/><br />
   <span *ngIf="creando">
   <button (click)="agregar()">Agregar</button>
   <button (click)="cancelar()">Cancelar</button>
   </span>
-</div>
+  <span *ngIf="!creando">
+  <button (click)="modificar()">Guardar</button>
+  </span></div>

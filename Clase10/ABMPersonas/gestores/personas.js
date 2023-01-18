@@ -7,7 +7,7 @@ async function agregar(nueva) {
     let nuevoId = 0;
     try{
         await sql.connect(db.config)
-        const result = await sql.query`insert into personas values(${nueva.nombre})`
+        const result = await sql.query`insert into personas (nombre,apellido,idestadocivil) values(${nueva.nombre},'',1)`
 
         if (result.rowsAffected[0] > 0) {
             const result2 = await sql.query('select @@identity as nuevoId')

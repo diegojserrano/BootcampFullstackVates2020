@@ -1,7 +1,8 @@
 const config = {
     user: 'sa',
     password: 'sa2K17docker',
-    server: '34.196.169.149',
+    //server: '34.196.169.149',
+    server: 'localhost',
     database: 'prueba',
     connectionTimeout: 30000,
     requestTimeout: 20000,

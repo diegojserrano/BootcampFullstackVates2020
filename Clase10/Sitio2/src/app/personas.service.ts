@@ -44,6 +44,25 @@ async agregar(nueva: Persona) {
       //this.plantel.push(nueva)
       //this.historial.agregar(`Agrega la persona ${nueva.nombre}`)
   }  
+  
+async modificar(nueva: Persona) {
+    if (nueva) {
+       console.log(nueva)
+        try {
+          await this.http.put(this.url,`nombre=${nueva.nombre}&id=${nueva.id}`,{ headers: {"Content-Type": "application/x-www-form-urlencoded"}}).toPromise()
+          this.historial.agregar(`Modifica la persona ${nueva.nombre}`)
+          this.consultar()
+          return true
+        }
+        catch (error) {
+          console.log(error)
+        }
+      }
+      return false
+  
+      //this.plantel.push(nueva)
+      //this.historial.agregar(`Agrega la persona ${nueva.nombre}`)
+  }  
 
  async borrar(p: Persona) {
     if (p) {
